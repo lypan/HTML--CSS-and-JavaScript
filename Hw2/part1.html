@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body onload="do_game()">
+    <script type="text/javascript">
+        var colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Cyan", "Purple"];
+
+        function do_game() {
+            var target_index = Math.floor(Math.random() * colors.length + 1);
+            var target = colors[target_index];
+            alert("target color is: " + target);
+
+            while (true) {
+                var color_string = colors.join(", ");
+                var guess_input = prompt("I am thinking one of the following color:\n" +
+                    color_string + "\n" +
+                    "Please guess a color:\n");
+                if (guess_input == target) {
+                    break;
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
